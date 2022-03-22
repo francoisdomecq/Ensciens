@@ -2,7 +2,7 @@
 
 La branche qui correspond au rendu du 14/01, soumissible à l'évaluation est disponible à l'adresse :
 
-https://github.com/ensc-glog/projet-2021-bernard-domecq-gr1/tree/rendu
+https://github.com/francoisdomecq/Ensciens.git
 
 `git clone --branch rendu git@github.com:ensc-glog/projet-2021-bernard-domecq-gr1.git`
 
