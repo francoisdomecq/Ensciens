@@ -1,0 +1,64 @@
+@model IEnumerable<Ensciens.Models.Eleve>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-sm-1">
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>      
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Promotion)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Famille)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="text-center">
+                <img width ="35" height ="35 " src="@Url.Content(""+ item.PhotoProfil)" alt ="pdp"/>
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Promotion)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Famille.Couleur)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

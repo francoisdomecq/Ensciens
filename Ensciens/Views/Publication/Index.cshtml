@@ -1,0 +1,64 @@
+@model IEnumerable<Ensciens.Models.Publication>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.Publicateur)
+            </th>
+            <th class ="col-sm-2">
+                @Html.DisplayNameFor(model => model.Titre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contenu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePublication)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medias)
+            </th>
+            <th class="col-sm-2"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem=> item.Publicateur.Nom) @Html.DisplayFor(modelItem=>item.Publicateur.Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                @if (item.Contenu.Length!=0){
+                    @Html.DisplayFor(modelItem => item.Contenu)
+                }
+                else if (item.Evenement.Description.Length!=0){
+                    @Html.DisplayFor(modelItem=>item.Evenement.Description)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePublication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medias)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
