@@ -4,7 +4,6 @@ La branche qui correspond au rendu du 14/01, soumissible à l'évaluation est di
 
 https://github.com/francoisdomecq/Ensciens.git
 
-`git clone --branch rendu git@github.com:ensc-glog/projet-2021-bernard-domecq-gr1.git`
 
 # Projet
 Projet de génie logiciel
